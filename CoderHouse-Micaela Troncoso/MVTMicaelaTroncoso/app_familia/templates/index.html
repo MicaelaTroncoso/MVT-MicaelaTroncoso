@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proyecto Coderhouse - Micaela Troncoso</title>
+</head>
+<style>
+    * {
+        margin: 5;
+        padding: 0;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .card {
+        width: 150px;
+        box-shadow: 1px 1px 6px #869AA6;
+        border-radius: 15px;
+        padding: 1.5em;
+    }
+
+    .card_nombre {
+        color:black;
+        font-size:large;
+        text-align: left;
+    }
+
+    .card_fecha {
+        color: brown;
+        font-size:small;
+        text-align: left;
+    }
+    .card_edad {
+        color:darkgreen;
+        font-size: medium;
+        text-align: left;
+    }
+</style>
+<body>
+<h1>Tabla de Familiares</h1>
+<section>
+    <div class="wrapper">
+        {% for familiar in familiares %}
+        <div class="card">
+            <div>
+                <p class="card_nombre">{{ familiar.getNombreCompleto }}</p>
+                <p class="card_fecha">Nació: {{ familiar.fec_nacimiento }}</p>
+                <p class="card_edad">{{ familiar.edad }} años</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+</body>
+</html>
